@@ -1,0 +1,59 @@
+{
+    "name": "fz_radio_express",
+    "description": "TBC",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "start": "node .",
+      "start:dev": "NODE_ENV=development nodemon -e js,json,yaml .",
+      "test": "NODE_ENV=test PORT=8988 MONGO_DB=fzradio-test QUEUE_NAME=fzradio-test nyc --reporter=html --reporter=text mocha --exit --recursive \"./{,!(node_modules)/**}/*.test.js\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "boom": "^7.3.0",
+      "bull": "^3.6.0",
+      "cors": "^2.8.5",
+      "dotenv": "^6.2.0",
+      "express": "^4.16.4",
+      "joi": "^14.3.0",
+      "mongoose": "^5.4.7",
+      "morgan": "^1.9.1",
+      "winston": "^3.1.0"
+    },
+    "devDependencies": {
+      "chai": "^4.2.0",
+      "eslint": "^5.10.0",
+      "eslint-config-airbnb-base": "^13.1.0",
+      "eslint-plugin-chai-friendly": "^0.4.1",
+      "eslint-plugin-import": "^2.14.0",
+      "faker": "^4.1.0",
+      "husky": "^1.2.0",
+      "lint-staged": "^8.1.0",
+      "mocha": "^5.2.0",
+      "nodemon": "^1.18.8",
+      "nyc": "^13.1.0",
+      "supertest": "^3.4.2"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.js": [
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "nyc": {
+      "exclude": [
+        "**/*.test.js",
+        "coverage/**",
+        "lib/logger.js",
+        "server.js"
+      ]
+    }
+  }
+  
