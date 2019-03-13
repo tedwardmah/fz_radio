@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<WithStyles(AppBar)
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(IconButton)
+      aria-label="Menu"
+      color="inherit"
+    >
+      <pure(MenuIcon) />
+    </WithStyles(IconButton)>
+    <WithStyles(Typography)
+      color="inherit"
+      variant="h6"
+    >
+      Friend Zone Radio
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
